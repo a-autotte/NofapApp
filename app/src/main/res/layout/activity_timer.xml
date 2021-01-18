@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".TimerActivity"
+    >
+
+    <TextView
+        android:id="@+id/TimerSecondsId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Seconds : "
+        android:textSize="32dp"
+        />
+
+    <TextView
+        android:id="@+id/TimerMinutesId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Minutes : "
+        android:textSize="32dp"
+        />
+
+
+    <TextView
+        android:id="@+id/TimerHoursId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hours : "
+        android:textSize="32dp"
+        />
+
+    <TextView
+        android:id="@+id/TimerDaysId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Days : "
+        android:textSize="32dp"
+        />
+
+    <TextView
+        android:id="@+id/TimerMonthsId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Months : "
+        android:textSize="32dp"
+        />
+
+    <TextView
+        android:id="@+id/TimerYearsId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Years : "
+        android:textSize="32dp"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Reset"/>
+
+
+
+</LinearLayout>

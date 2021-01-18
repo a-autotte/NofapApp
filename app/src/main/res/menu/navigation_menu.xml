@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/IconProfileId"
+        android:title="My Profile"
+        android:icon="@drawable/icon_person"
+        >
+
+    </item>
+
+    <item
+        android:id="@+id/IconSettingId"
+        android:title="Settings"
+        android:icon="@drawable/icon_settings"
+        >
+    </item>
+
+    <item
+        android:id="@+id/IconTimerId"
+        android:title="Timer"
+        android:icon="@drawable/icon_timer"
+        >
+
+    </item>
+
+
+</menu>

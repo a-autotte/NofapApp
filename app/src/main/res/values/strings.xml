@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">NofapMainActivity</string>
+    <string name="Open">NavBar</string>
+    <string name="Close">NavBar</string>
     <string-array name="age">
         <item> 14 </item>
         <item> 15 </item>
