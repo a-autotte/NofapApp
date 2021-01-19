@@ -3,7 +3,7 @@ package com.example.nofapmainactivity.models;
 import java.util.Timer;
 
 public class TimerModel {
-    public int cptNumberOfDay;
+    public boolean TimerStarted;
 
     public int Hours;
     public int Minutes;
@@ -14,49 +14,51 @@ public class TimerModel {
 
     public TimerModel()
     {
-        Reset();
+        this.TimerStarted = true;
         AddTime();
     }
 
     public void AddTime()
     {
-        Seconds++;
+            Seconds++;
 
-        if (Seconds > 60)
-        {
-            Seconds = 0;
-            Minutes++;
-
-            if (Minutes > 60)
+            if (Seconds > 60)
             {
-                if (Hours > 24)
-                {
-                    Days++;
+                Seconds = 0;
+                Minutes++;
 
-                    if (Days > 30)
+                if (Minutes > 60)
+                {
+                    if (Hours > 24)
                     {
-                        if (Months > 12)
+                        Days++;
+
+                        if (Days > 30)
                         {
-                            Years++;
-                            Months = 0;
+                            if (Months > 12)
+                            {
+                                Years++;
+                                Months = 0;
+                            }
+                            Months++;
+                            Days = 0;
                         }
-                        Months++;
-                        Days = 0;
                     }
+
+                    Minutes = 0;
+                    Hours++;
                 }
 
-                Minutes = 0;
-                Hours++;
+
             }
 
 
-        }
     }
 
 
     public void Reset()
     {
-        this.cptNumberOfDay = 0;
+        this.TimerStarted = false;
         this.Seconds = 0;
         this.Minutes = 0;
         this.Hours = 0;

@@ -3,16 +3,18 @@ package com.example.nofapmainactivity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.nofapmainactivity.models.TimerModel;
 
-public class TimerActivity extends AppCompatActivity {
+import java.util.Timer;
 
-    TextView mSeconds, mMinutes, mHours, mDays, mMonths, mYears;
+public class TimerActivity extends AppCompatActivity {
     TimerModel timer;
+    TextView mSeconds, mMinutes, mHours, mDays, mMonths, mYears;
     String timerSecond, timerMinutes, timerHours, timerDays, timerMonths, timerYears;
     Button mResetButton;
     @Override
@@ -27,13 +29,9 @@ public class TimerActivity extends AppCompatActivity {
         mMonths = findViewById(R.id.TimerMonthsId);
         mYears = findViewById(R.id.TimerYearsId);
 
-        //initTimer();
-        int index = 0;
-        while (index < 100)
-        {
-            timer.AddTime();
-            index++;
-        }
+        initTimer();
+        AddTimerTime();
+        mResetButton = findViewById(R.id.ButtonResetId);
 
         mResetButton.setOnClickListener(new View.OnClickListener()
         {
@@ -47,7 +45,6 @@ public class TimerActivity extends AppCompatActivity {
     private void ResetTimer()
     {
         timer = new TimerModel();
-        timer.Reset();
         timerSecond = Integer.toString(timer.Seconds);
         timerMinutes = Integer.toString(timer.Minutes);
         timerHours = Integer.toString(timer.Hours);
@@ -62,10 +59,9 @@ public class TimerActivity extends AppCompatActivity {
         mYears.setText("Years : \t\t" + timerYears);
     }
 
-    /*private void initTimer()
+    private void initTimer()
     {
         timer = new TimerModel();
-        timer.Reset();
         timerSecond = Integer.toString(timer.Seconds);
         timerMinutes = Integer.toString(timer.Minutes);
         timerHours = Integer.toString(timer.Hours);
@@ -79,5 +75,22 @@ public class TimerActivity extends AppCompatActivity {
         mMonths.setText("Months : \t\t" + timerMonths);
         mYears.setText("Years : \t\t" + timerYears);
 
-    }*/
+    }
+
+    private void AddTimerTime()
+    {
+        timer.AddTime();
+        timerSecond = Integer.toString(timer.Seconds);
+        timerMinutes = Integer.toString(timer.Minutes);
+        timerHours = Integer.toString(timer.Hours);
+        timerDays = Integer.toString(timer.Days);
+        timerMonths = Integer.toString(timer.Months);
+        timerYears = Integer.toString(timer.Years);
+        mSeconds.setText("Seconds : \t\t" + timerSecond);
+        mMinutes.setText("Minutes : \t\t" + timerMinutes);
+        mHours.setText("Hours : \t\t" + timerHours);
+        mDays.setText("Days : \t\t" + timerDays);
+        mMonths.setText("Months : \t\t" + timerMonths);
+        mYears.setText("Years : \t\t" + timerYears);
+    }
 }
