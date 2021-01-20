@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">NofapMainActivity</string>
+    <string name="facebook_app_id">749106545985548</string>
+    <string name="fb_login_protocol_scheme">fb749106545985548</string>
     <string name="Open">NavBar</string>
     <string name="Close">NavBar</string>
     <string-array name="age">

@@ -1,69 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".TimerActivity"
-    >
+    android:id="@+id/dl"
+    tools:context=".SettingsActivity">
 
-    <TextView
-        android:id="@+id/TimerSecondsId"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Seconds : "
-        android:textSize="32dp"
-        />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".TimerActivity">
 
-    <TextView
-        android:id="@+id/TimerMinutesId"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Minutes : "
-        android:textSize="32dp"
-        />
+        <Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/grey"
+            tools:targetApi="lollipop">
 
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RESET"
+                android:background="@null"
+                android:textColor="@color/red"
+                android:textSize="30sp"
+                android:onClick="resetTapped"
+                />
 
-    <TextView
-        android:id="@+id/TimerHoursId"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Hours : "
-        android:textSize="32dp"
-        />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TIMER"
+                android:textColor="@color/black"
+                android:layout_gravity="center"
+                android:textSize="30sp"/>
 
-    <TextView
-        android:id="@+id/TimerDaysId"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Days : "
-        android:textSize="32dp"
-        />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="START"
+                android:id="@+id/startStopButton"
+                android:background="@null"
+                android:textColor="@color/green"
+                android:textSize="30sp"
+                android:layout_gravity="end"
+                android:layout_marginRight="15dp"
+                android:onClick="startStopTapped"
+                />
 
-    <TextView
-        android:id="@+id/TimerMonthsId"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Months : "
-        android:textSize="32dp"
-        />
+        </Toolbar>
 
-    <TextView
-        android:id="@+id/TimerYearsId"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Years : "
-        android:textSize="32dp"
-        />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/timerText"
+            android:textSize="60sp"
+            android:text="00:00:00"
+            android:textColor="@color/black"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            />
 
-    <Button
-        android:id="@+id/ButtonResetId"
+    </LinearLayout>
+
+    <com.google.android.material.navigation.NavigationView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Reset"/>
+        android:layout_height="match_parent"
+        android:id="@+id/nav_view"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/navigation_header"
+        app:menu="@menu/navigation_menu">
+
+    </com.google.android.material.navigation.NavigationView>
+
+
+</androidx.drawerlayout.widget.DrawerLayout>
 
 
 
-</LinearLayout>
+
