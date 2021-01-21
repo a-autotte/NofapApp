@@ -68,7 +68,7 @@ public class TimerActivity extends AppCompatActivity {
 
                 else if (id == R.id.IconTimerId)
                 {
-                    OpenActivity(TimerActivity.class);
+                    dl.closeDrawers();
                 }
                 return true;
             }

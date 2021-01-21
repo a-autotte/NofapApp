@@ -37,7 +37,7 @@ public class ProfileActivity extends AppCompatActivity {
 
                 if (id == R.id.IconProfileId)
                 {
-                    OpenActivity(ProfileActivity.class);
+                    dl.closeDrawers();
                 }
 
                 else if (id == R.id.IconSettingId)

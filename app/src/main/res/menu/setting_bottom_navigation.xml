@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/IconRateUsId"
+        android:title="Rate us"
+        android:icon="@drawable/ic_baseline_mail_24"
+        >
+
+    </item>
+
+    <item
+        android:id="@+id/IconFeedBackId"
+        android:title="Feedback"
+        android:icon="@drawable/ic_baseline_rate_review_24"
+        >
+    </item>
+
+    <item
+        android:id="@+id/IconPrivacyPolicyId"
+        android:title="Privacy policy"
+        android:icon="@drawable/ic_baseline_remove_red_eye_24"
+        >
+
+    </item>
+</menu>
