@@ -3,10 +3,16 @@ package com.example.nofapmainactivity;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.app.Activity;
+import android.content.ClipData;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -45,6 +51,8 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 import com.squareup.picasso.Picasso;
 
+import java.util.Locale;
+
 
 public class SettingsActivity extends AppCompatActivity {
     private SignInButton signInButton;
@@ -67,6 +75,7 @@ public class SettingsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        loadLocale();
         setContentView(R.layout.activity_settings);
         dl = findViewById(R.id.dl);
         abdt = new ActionBarDrawerToggle(this, dl, R.string.Open, R.string.Close);
@@ -78,6 +87,17 @@ public class SettingsActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         NavigationView nav_view = findViewById(R.id.nav_view);
+        NavigationView nav_settings = findViewById(R.id.nav_setting);
+
+        nav_settings.setNavigationItemSelectedListener(item -> {
+            int id = item.getItemId();
+
+            if (id == R.id.IconLanguageOptionsId)
+            {
+                showChangeLanguageDialog();
+            }
+            return true;
+        });
         textViewUser = findViewById(R.id.text_user);
         loginButton = findViewById(R.id.login_button);
         signInButton = findViewById(R.id.sign_in_button);
@@ -254,7 +274,6 @@ public class SettingsActivity extends AppCompatActivity {
 
         } else {
             textViewUser.setText("");
-            mLogo.setImageResource(R.drawable.img_user);
         }
 
         btnSignOut.setVisibility(View.VISIBLE);
@@ -269,10 +288,6 @@ public class SettingsActivity extends AppCompatActivity {
 
             Toast.makeText(SettingsActivity.this,personName + personEmail ,Toast.LENGTH_SHORT).show();
         }
-
-
-
-
     }
 
     private void handleFacebookToken(AccessToken token)
@@ -322,5 +337,67 @@ public class SettingsActivity extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), ActivityToOpen);
         startActivity(intent);
     }
+
+
+    private void showChangeLanguageDialog() {
+        final String[] listItems = {"English", "Spanish", "French", "Italian"};
+        AlertDialog.Builder mBuilder = new AlertDialog.Builder(SettingsActivity.this);
+        mBuilder.setTitle("Choose Language...");
+        mBuilder.setSingleChoiceItems(listItems, -1, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int i) {
+                if (i == 0)
+                {
+                    setLocale("en");
+                    recreate();
+                }
+
+                else if (i == 1)
+                {
+                    setLocale("es");
+                    recreate();
+                }
+
+                else if (i == 2)
+                {
+                    setLocale("fr");
+                    recreate();
+                }
+
+                else if (i == 3)
+                {
+                    setLocale("it");
+                    recreate();
+                }
+
+                dialog.dismiss();
+            }
+        });
+
+        AlertDialog mDialog = mBuilder.create();
+        mDialog.show();
+    }
+
+    private void setLocale(String lang)
+    {
+        Locale locale = new Locale(lang);
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.locale = locale;
+        getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
+        SharedPreferences.Editor editor = getSharedPreferences("Settings", MODE_PRIVATE).edit();
+        editor.putString("My_Lang", lang);
+        editor.apply();
+    }
+
+    public void loadLocale()
+    {
+        SharedPreferences prefs = getSharedPreferences("Settings", Activity.MODE_PRIVATE);
+        String language = prefs.getString("My_Lang", "");
+        setLocale(language);
+
+    }
+
+
 
 }

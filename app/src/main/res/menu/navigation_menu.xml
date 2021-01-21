@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/IconProfileId"
-        android:title="My Profile"
+        android:title="@string/myprofile"
         android:icon="@drawable/icon_person"
         >
 
@@ -10,14 +10,14 @@
 
     <item
         android:id="@+id/IconSettingId"
-        android:title="Settings"
+        android:title="@string/settings"
         android:icon="@drawable/icon_settings"
         >
     </item>
 
     <item
         android:id="@+id/IconTimerId"
-        android:title="Timer"
+        android:title="@string/timer"
         android:icon="@drawable/icon_timer"
         >
 

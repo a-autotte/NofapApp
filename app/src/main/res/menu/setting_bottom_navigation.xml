@@ -1,25 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item
-        android:id="@+id/IconRateUsId"
-        android:title="Rate us"
-        android:icon="@drawable/ic_baseline_mail_24"
-        >
-
-    </item>
 
     <item
-        android:id="@+id/IconFeedBackId"
-        android:title="Feedback"
-        android:icon="@drawable/ic_baseline_rate_review_24"
-        >
-    </item>
+        android:title="@string/generalsettings">
 
+        <menu>
+            <item
+                android:id="@+id/IconLanguageOptionsId"
+                android:title="@string/optionslang"
+                android:icon="@drawable/ic_baseline_language_24"
+                >
+
+            </item>
+        </menu>
+    </item>
     <item
-        android:id="@+id/IconPrivacyPolicyId"
-        android:title="Privacy policy"
-        android:icon="@drawable/ic_baseline_remove_red_eye_24"
+        android:title="@string/supportus"
         >
+        <menu>
+            <item
+                android:id="@+id/IconRateUsId"
+                android:title="@string/rateus"
+                android:icon="@drawable/ic_baseline_mail_24"
+                >
 
+            </item>
+
+            <item
+                android:id="@+id/IconFeedBackId"
+                android:title="@string/feedback"
+                android:icon="@drawable/ic_baseline_rate_review_24"
+                >
+            </item>
+
+            <item
+                android:id="@+id/IconPrivacyPolicyId"
+                android:title="@string/privacypolicy"
+                android:icon="@drawable/ic_baseline_remove_red_eye_24"
+                >
+
+            </item>
+        </menu>
     </item>
+
+
+
+
+
+
 </menu>

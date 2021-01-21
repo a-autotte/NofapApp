@@ -40,25 +40,20 @@
               android:id="@+id/sign_out_button"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
-              android:text="Sign Out"
+              android:text="@string/signout"
               android:visibility="invisible"
               />
 
-          <!--<TextView
+
+
+          <com.google.android.material.navigation.NavigationView
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
-              android:text="Support us"
-              android:textColor="@color/orange_yellow"
-              />-->
+              android:id="@+id/nav_setting"
+              app:menu="@menu/setting_bottom_navigation">
+          </com.google.android.material.navigation.NavigationView>
 
-          <!--<com.google.android.material.navigation.NavigationView
-              android:layout_width="wrap_content"
-              android:layout_height="match_parent"
-              android:id="@+id/nav_support_us_view"
-              app:menu="@menu/setting_bottom_navigation"
-              >
 
-          </com.google.android.material.navigation.NavigationView>-->
      </LinearLayout>
 
      <com.google.android.material.navigation.NavigationView

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NofapMainActivity</string>
+    <string name="reset"> RÉINITIALISER </string>
+    <string name="timer"> MINUTERIE </string>
+    <string name="start"> COMMENCER </string>
+    <string name="cancel"> ARRÊTER </string>
+    <string name="resettimer"> Réinitialiser la minuterie </string>
+    <string name="resettimerconfirmation">Êtes-vous sûr de vouloir réinitialiser la minuterie ?</string>
+    <string name="signout">Déconnexion </string>
+    <string name="generalsettings"> Options générales </string>
+    <string name="optionslang"> Options de langues </string>
+    <string name="supportus"> Supportez nous </string>
+    <string name="rateus"> Notez nous </string>
+    <string name="feedback"> Commentaire </string>
+    <string name="privacypolicy">Politique privée</string>
+    <string name="register"> INSCRIPTION </string>
+    <string name="username">Nom d\'utilisateur</string>
+    <string name="password">Mot de passe</string>
+    <string name="retypepassword">Mot de passe confirmation </string>
+    <string name="email">Adresse courriel</string>
+    <string name="agreement">J\'accepte les conditions et services</string>
+    <string name="signup">S\'inscrire</string>
+    <string name="alreadymember">Déjà un membre? Connectez ici</string>
+    <string name="myprofile">Mon profile</string>
+    <string name="settings">Options </string>
+</resources>

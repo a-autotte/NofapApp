@@ -100,9 +100,9 @@ public class TimerActivity extends AppCompatActivity {
     public void resetTapped(View view)
     {
         AlertDialog.Builder resetAlert = new AlertDialog.Builder(this);
-        resetAlert.setTitle("Reset Timer");
-        resetAlert.setMessage("Are you sure you want to reset the timer?");
-        resetAlert.setPositiveButton("Reset", new DialogInterface.OnClickListener()
+        resetAlert.setTitle(R.string.resettimer);
+        resetAlert.setMessage(R.string.resettimerconfirmation);
+        resetAlert.setPositiveButton(R.string.reset, new DialogInterface.OnClickListener()
         {
             @Override
             public void onClick(DialogInterface dialogInterface, int i)
@@ -119,7 +119,7 @@ public class TimerActivity extends AppCompatActivity {
             }
         });
 
-        resetAlert.setNeutralButton("Cancel", new DialogInterface.OnClickListener()
+        resetAlert.setNeutralButton(R.string.cancel, new DialogInterface.OnClickListener()
         {
             @Override
             public void onClick(DialogInterface dialogInterface, int i)

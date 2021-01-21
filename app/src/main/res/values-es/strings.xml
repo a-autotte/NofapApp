@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NofapMainActivity</string>
+    <string name="reset"> REINICIAR </string>
+    <string name="timer"> TEMPORIZADOR </string>
+    <string name="start"> COMIENZO</string>
+    <string name="cancel"> CANCELAR </string>
+    <string name="resettimer"> Restablecer temporizador </string>
+    <string name="resettimerconfirmation">¿Estás segura de que quieres reiniciar el temporizador?</string>
+    <string name="signout"> desconectar </string>
+    <string name="generalsettings">Configuración general </string>
+    <string name="optionslang"> Opciones de lenguaje</string>
+    <string name="supportus"> Apoyanos </string>
+    <string name="rateus"> Nos califica </string>
+    <string name="feedback"> Retroalimentación </string>
+    <string name="privacypolicy">Política de privacidad</string>
+    <string name="register"> REGISTRARSE </string>
+    <string name="username">Nombre de usuario</string>
+    <string name="password">Contraseña</string>
+    <string name="retypepassword">Vuelva a escribir la contraseña </string>
+    <string name="email">Email</string>
+    <string name="agreement">Estoy de acuerdo con los términos de servicio</string>
+    <string name="signup">REGÍSTRATE</string>
+    <string name="alreadymember">¿Ya eres usuario? Entre aquí</string>
+    <string name="myprofile">Mi perfil</string>
+    <string name="settings">Configuraciones</string>
+</resources>

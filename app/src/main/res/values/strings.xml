@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">NofapMainActivity</string>
-    <string name="facebook_app_id">749106545985548</string>
-    <string name="fb_login_protocol_scheme">fb749106545985548</string>
-    <string name="Open">NavBar</string>
-    <string name="Close">NavBar</string>
+    <string name="facebook_app_id" translatable="false">749106545985548</string>
+    <string name="fb_login_protocol_scheme" translatable="false">fb749106545985548</string>
+    <string name="Open" translatable="false">NavBar</string>
+    <string name="Close" translatable="false">NavBar</string>
     <string-array name="age">
         <item> 14 </item>
         <item> 15 </item>
@@ -46,4 +46,28 @@
         <item> 52 </item>
         <item> 53 </item>
     </string-array>
+    <string name="reset"> RESET </string>
+    <string name="timer"> TIMER </string>
+    <string name="start"> START </string>
+    <string name="cancel"> CANCEL </string>
+    <string name="resettimer"> Reset Timer </string>
+    <string name="resettimerconfirmation">Are you sure you want to reset the timer?</string>
+    <string name="signout">Sign out </string>
+    <string name="generalsettings"> General Settings </string>
+    <string name="optionslang"> Language Options </string>
+    <string name="supportus"> Support us </string>
+    <string name="rateus"> Rate Us </string>
+    <string name="feedback"> Feedback </string>
+    <string name="privacypolicy">Privacy policy</string>
+    <string name="register"> REGISTER </string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="retypepassword">Re-type Password</string>
+    <string name="email">Email</string>
+    <string name="agreement">I agree to the Terms of Service</string>
+    <string name="signup">SIGN UP</string>
+    <string name="alreadymember">Already a member? Login Here</string>
+    <string name="myprofile">My Profile</string>
+    <string name="settings">Settings</string>
+
 </resources>
