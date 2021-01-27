@@ -24,4 +24,6 @@
     <string name="alreadymember">¿Ya eres usuario? Entre aquí</string>
     <string name="myprofile">Mi perfil</string>
     <string name="settings">Configuraciones</string>
+    <string name="sharewithfriends">Compartir con amigas</string>
+    <string name="community">Comunidad</string>
 </resources>

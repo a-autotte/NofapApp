@@ -23,6 +23,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.nofapmainactivity.databinding.ActivitySettingsBinding;
 import com.facebook.AccessToken;
 import com.facebook.AccessTokenTracker;
 import com.facebook.CallbackManager;
@@ -55,55 +56,65 @@ import java.util.Locale;
 
 
 public class SettingsActivity extends AppCompatActivity {
-    private SignInButton signInButton;
+
     private GoogleSignInClient mGoogleSignInClient;
     private  String TAGGoogle = "SettingsActivity";
     private FirebaseAuth mAuth;
-    private Button btnSignOut;
+
     private int RC_SIGN_IN = 1;
 
-    private DrawerLayout dl;
     private ActionBarDrawerToggle abdt;
     private CallbackManager mCallbackManager;
     private FirebaseAuth mFirebaseAuth;
     private FirebaseAuth.AuthStateListener authStateListener;
-    private TextView textViewUser;
     private ImageView mLogo;
-    private LoginButton loginButton;
     private AccessTokenTracker accessTokenTracker;
     private static final String TAG = "FacebookAuthentication";
+    ActivitySettingsBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         loadLocale();
-        setContentView(R.layout.activity_settings);
-        dl = findViewById(R.id.dl);
-        abdt = new ActionBarDrawerToggle(this, dl, R.string.Open, R.string.Close);
+        binding = ActivitySettingsBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
+        setContentView(view);
+        abdt = new ActionBarDrawerToggle(this, binding.dl, R.string.Open, R.string.Close);
         abdt.setDrawerIndicatorEnabled(true);
 
-        dl.addDrawerListener(abdt);
+        binding.dl.addDrawerListener(abdt);
         abdt.syncState();
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        NavigationView nav_view = findViewById(R.id.nav_view);
-        NavigationView nav_settings = findViewById(R.id.nav_setting);
 
-        nav_settings.setNavigationItemSelectedListener(item -> {
+        binding.navSetting.setNavigationItemSelectedListener(item -> {
             int id = item.getItemId();
 
-            if (id == R.id.IconLanguageOptionsId)
+            switch(id)
             {
-                showChangeLanguageDialog();
+                case R.id.IconLanguageOptionsId:
+                    showChangeLanguageDialog();
+
+                    break;
+
+                case R.id.IconShareId:
+                    Intent sharingIntent = new Intent(Intent.ACTION_SEND);
+                    sharingIntent.setType("text/plain");
+                    String shareBody="Your body Here";
+                    String shareSubject="Your Subject here";
+
+                    sharingIntent.putExtra(Intent.EXTRA_TEXT, shareBody);
+                    sharingIntent.putExtra(Intent.EXTRA_SUBJECT, shareSubject);
+
+                    startActivity(Intent.createChooser(sharingIntent, "Share Using"));
+                    break;
             }
+
             return true;
         });
-        textViewUser = findViewById(R.id.text_user);
-        loginButton = findViewById(R.id.login_button);
-        signInButton = findViewById(R.id.sign_in_button);
-        btnSignOut = findViewById(R.id.sign_out_button);
 
-        nav_view.setNavigationItemSelectedListener(item -> {
+
+        binding.navView.setNavigationItemSelectedListener(item -> {
             int id = item.getItemId();
 
             if (id == R.id.IconProfileId)
@@ -113,7 +124,7 @@ public class SettingsActivity extends AppCompatActivity {
 
             else if (id == R.id.IconSettingId)
             {
-                dl.closeDrawers();
+                binding.dl.closeDrawers();
             }
 
 
@@ -130,10 +141,10 @@ public class SettingsActivity extends AppCompatActivity {
 
 
 
-        loginButton.setReadPermissions("email", "public_profile");
+        binding.loginButton.setReadPermissions("email", "public_profile");
 
         mCallbackManager = CallbackManager.Factory.create();
-        loginButton.registerCallback(mCallbackManager, new FacebookCallback<LoginResult>() {
+        binding.loginButton.registerCallback(mCallbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
                 Log.d(TAG, "onSuccess" + loginResult);
@@ -188,12 +199,12 @@ public class SettingsActivity extends AppCompatActivity {
 
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
-        signInButton.setOnClickListener(view -> signIn());
+        binding.signInButton.setOnClickListener(viewNav -> signIn());
 
-        btnSignOut.setOnClickListener(view -> {
+        binding.signOutButton.setOnClickListener(viewNav -> {
             mGoogleSignInClient.signOut();
             Toast.makeText(SettingsActivity.this,"You are Logged Out",Toast.LENGTH_SHORT).show();
-            btnSignOut.setVisibility(View.INVISIBLE);
+            binding.signOutButton.setVisibility(View.INVISIBLE);
         });
     }
 
@@ -273,10 +284,10 @@ public class SettingsActivity extends AppCompatActivity {
             }
 
         } else {
-            textViewUser.setText("");
+            binding.textUser.setText("");
         }
 
-        btnSignOut.setVisibility(View.VISIBLE);
+        binding.signOutButton.setVisibility(View.VISIBLE);
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(getApplicationContext());
         if(account !=  null){
             String personName = account.getDisplayName();
