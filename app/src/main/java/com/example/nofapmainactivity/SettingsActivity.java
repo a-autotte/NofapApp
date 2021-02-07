@@ -117,20 +117,23 @@ public class SettingsActivity extends AppCompatActivity {
         binding.navView.setNavigationItemSelectedListener(item -> {
             int id = item.getItemId();
 
-            if (id == R.id.IconProfileId)
+            switch (id)
             {
-                OpenActivity(ProfileActivity.class);
-            }
+                case R.id.IconProfileId:
+                    OpenActivity(ProfileActivity.class);
+                    break;
 
-            else if (id == R.id.IconSettingId)
-            {
-                binding.dl.closeDrawers();
-            }
+                case R.id.IconSettingId:
+                    binding.dl.closeDrawers();
+                    break;
 
+                case R.id.IconTimerId:
+                    OpenActivity(TimerActivity.class);
+                    break;
 
-            else if (id == R.id.IconTimerId)
-            {
-                OpenActivity(TimerActivity.class);
+                case R.id.IconCommunityId:
+                    OpenActivity(CommunityActivity.class);
+                    break;
             }
             return true;
         });

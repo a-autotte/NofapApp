@@ -55,19 +55,23 @@ public class TimerActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int id = item.getItemId();
 
-                if (id == R.id.IconProfileId)
+                switch (id)
                 {
-                    OpenActivity(ProfileActivity.class);
-                }
+                    case R.id.IconProfileId:
+                        OpenActivity(ProfileActivity.class);
+                        break;
 
-                else if (id == R.id.IconSettingId)
-                {
-                    OpenActivity(SettingsActivity.class);
-                }
+                    case R.id.IconSettingId:
+                        OpenActivity(SettingsActivity.class);
+                        break;
 
-                else if (id == R.id.IconTimerId)
-                {
-                    dl.closeDrawers();
+                    case R.id.IconTimerId:
+                        dl.closeDrawers();
+                        break;
+
+                    case R.id.IconCommunityId:
+                        OpenActivity(CommunityActivity.class);
+                        break;
                 }
                 return true;
             }

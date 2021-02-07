@@ -23,5 +23,13 @@
 
     </item>
 
+    <item
+        android:id="@+id/IconCommunityId"
+        android:title="@string/community"
+        android:icon="@drawable/ic_baseline_group_24"
+        >
+
+    </item>
+
 
 </menu>

@@ -27,7 +27,6 @@ public class ProfileActivity extends AppCompatActivity {
         abdt.syncState();
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
         NavigationView nav_view = (NavigationView)findViewById(R.id.nav_view);
 
         nav_view.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {

@@ -26,4 +26,19 @@
     <string name="settings">Options </string>
     <string name="sharewithfriends">Partager avec des amis</string>
     <string name="community">Communauté</string>
+    <string name="discordcommunity"> Recherche ta communauté ici </string>
+
+    <array name="nofapservername">
+        <item> Sidra </item>
+        <item> Mira Queen </item>
+        <item> Amin Dar Sodi </item>
+        <item> Sapna Poji Raj </item>
+        <item> Naafia Raadiriah </item>
+        <item> Naashira Nadiam </item>
+        <item> Kabira Nadiam </item>
+        <item> Kabsha Rohemi </item>
+        <item> Kabsha Rohem</item>
+
+    </array>
+    <string name="nofapserverdescription"> this is user description for all items </string>
 </resources>
