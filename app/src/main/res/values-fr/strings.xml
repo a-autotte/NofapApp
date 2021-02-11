@@ -29,16 +29,15 @@
     <string name="discordcommunity"> Recherche ta communauté ici </string>
 
     <array name="nofapservername">
-        <item> Sidra </item>
-        <item> Mira Queen </item>
-        <item> Amin Dar Sodi </item>
-        <item> Sapna Poji Raj </item>
-        <item> Naafia Raadiriah </item>
-        <item> Naashira Nadiam </item>
-        <item> Kabira Nadiam </item>
-        <item> Kabsha Rohemi </item>
-        <item> Kabsha Rohem</item>
-
+        <item> NoFap Brotherhood </item>
+        <item> NoPorn </item>
+        <item> The NoFap Club </item>
+        <item> ꜱʏɴᴅɪᴄᴀᴛᴇ </item>
+        <item> No Nut </item>
+        <item> Abstinence (Anti-Fap) </item>
+        <item> NoFap Community </item>
+        <item> Alpha Men </item>
+        <item> DON\'T FAPP! </item>
     </array>
     <string name="nofapserverdescription"> this is user description for all items </string>
 </resources>
