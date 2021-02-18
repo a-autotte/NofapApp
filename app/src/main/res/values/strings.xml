@@ -72,17 +72,21 @@
     <string name="sharewithfriends">Share with friends</string>
     <string name="community">Community</string>
     <string name="discordcommunity"> Search your community here </string>
+    <string name="todolist"> To do list : </string>
+    <string name="todolist1"> To do list </string>
+    <string name="todolistexemple"> Task to do (ex : train, play video games, read books, study etc.) </string>
+    <string name="addtask"> Add task </string>
 
     <array name="nofapservername">
-        <item> NoFap Brotherhood </item>
-        <item> NoPorn </item>
-        <item> The NoFap Club </item>
-        <item> ꜱʏɴᴅɪᴄᴀᴛᴇ </item>
-        <item> No Nut </item>
-        <item> Abstinence (Anti-Fap) </item>
-        <item> NoFap Community </item>
-        <item> Alpha Men </item>
-        <item> DON\'T FAPP! </item>
+        <item>NoFap Brotherhood</item>
+        <item>NoPorn</item>
+        <item>The NoFap Club</item>
+        <item>ꜱʏɴᴅɪᴄᴀᴛᴇ</item>
+        <item>No Nut</item>
+        <item>Abstinence (Anti-Fap)</item>
+        <item>NoFap Community</item>
+        <item>Alpha Men</item>
+        <item>DON\'T FAPP!</item>
     </array>
     <string name="nofapserverdescription"> this is user description for all items </string>
 

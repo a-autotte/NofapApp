@@ -27,6 +27,10 @@
     <string name="sharewithfriends">Compartir con amigas</string>
     <string name="community">Comunidad</string>
     <string name="discordcommunity"> Busque su comunidad aquí </string>
+    <string name="todolist"> Lista de quehaceres : </string>
+    <string name="todolist1"> Lista de quehaceres </string>
+    <string name="todolistexemple"> Tarea para hacer (por ejemplo: entrenar, jugar videojuegos, leer libros, estudiar, etc.) </string>
+    <string name="addtask"> Agregar tarea </string>
 
     <array name="nofapservername">
         <item> NoFap Brotherhood </item>

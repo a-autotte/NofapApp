@@ -84,6 +84,10 @@ public class CommunityActivity extends AppCompatActivity {
                     case R.id.IconCommunityId:
                         dl.closeDrawers();
                         break;
+
+                    case R.id.IconToDoListId:
+                        OpenActivity(ToDoListActivity.class);
+                        break;
                 }
                 return true;
             }

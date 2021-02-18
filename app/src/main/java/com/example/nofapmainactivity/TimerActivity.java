@@ -72,6 +72,10 @@ public class TimerActivity extends AppCompatActivity {
                     case R.id.IconCommunityId:
                         OpenActivity(CommunityActivity.class);
                         break;
+
+                    case R.id.IconToDoListId:
+                        OpenActivity(ToDoListActivity.class);
+                        break;
                 }
                 return true;
             }

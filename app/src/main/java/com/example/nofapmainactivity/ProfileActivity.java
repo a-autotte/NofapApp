@@ -34,20 +34,28 @@ public class ProfileActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int id = item.getItemId();
 
-                if (id == R.id.IconProfileId)
+                switch(id)
                 {
-                    dl.closeDrawers();
+                    case R.id.IconProfileId:
+                        dl.closeDrawers();
+                        break;
+                    case R.id.IconSettingId:
+                        OpenActivity(SettingsActivity.class);
+                        break;
+
+                    case R.id.IconTimerId:
+                        OpenActivity(TimerActivity.class);
+                        break;
+
+                    case R.id.IconCommunityId:
+                        OpenActivity(CommunityActivity.class);
+                        break;
+
+                    case R.id.IconToDoListId:
+                        OpenActivity(ToDoListActivity.class);
+                        break;
                 }
 
-                else if (id == R.id.IconSettingId)
-                {
-                    OpenActivity(SettingsActivity.class);
-                }
-
-                else if (id == R.id.IconTimerId)
-                {
-                    OpenActivity(TimerActivity.class);
-                }
                 return true;
             }
         });
