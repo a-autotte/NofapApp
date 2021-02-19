@@ -8,17 +8,22 @@
     android:id="@+id/dl"
     tools:context=".ToDoListActivity">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/lltoDoListId"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
         <TextView
-            android:layout_width="match_parent"
+            android:id="@+id/tasksText"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="@string/tasks"
+            android:textColor="@android:color/black"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="16dp"
             android:textSize="32sp"
-            android:text="@string/todolist"
             />
 
         <EditText
@@ -27,7 +32,30 @@
             android:layout_height="wrap_content"
             android:hint="@string/todolistexemple"
             android:maxLength="20"
+            android:layout_below="@id/tasksText"
             />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/tasksRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editTextToDoListId"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:nestedScrollingEnabled="true"/>
+            
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="32dp"
+            android:background="@color/orange_yellow"
+            android:src="@drawable/ic_baseline_add_24"
+            android:layout_alignParentRight="true" />
+
+
 
         <TextView
             android:id="@+id/toDoListTextId"
@@ -35,14 +63,8 @@
             android:layout_height="wrap_content"
             android:textSize="24sp"
             />
-        <Button
-            android:id="@+id/ButtonToDoListId"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="1380px"
-            android:text="@string/addtask" />
 
-    </LinearLayout>
+    </RelativeLayout>
 
 
 

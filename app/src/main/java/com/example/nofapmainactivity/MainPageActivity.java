@@ -5,6 +5,8 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -15,22 +17,60 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.nofapmainactivity.Adapter.ToDoAdapter;
 import com.example.nofapmainactivity.databinding.ActivityMainPageBinding;
 import com.example.nofapmainactivity.databinding.ActivitySignupBinding;
+import com.example.nofapmainactivity.modals.ToDoModel;
 import com.google.android.material.navigation.NavigationView;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
 
 public class MainPageActivity extends AppCompatActivity {
     private DrawerLayout dl;
     private ActionBarDrawerToggle abdt;
+    private RecyclerView tasksRecyclerView;
+    private ToDoAdapter tasksAdapter;
+
+    private List<ToDoModel> taskList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         loadLocale();
         setContentView(R.layout.activity_main_page);
+        /*getSupportActionBar().hide();
+
+        taskList = new ArrayList<>();
+
+        tasksRecyclerView = findViewById(R.id.tasksRecyclerView);
+        tasksRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        tasksAdapter = new ToDoAdapter(this);
+        tasksRecyclerView.setAdapter(tasksAdapter);
+
+        ToDoModel task = new ToDoModel();
+        task.setTask("This is a Test Task");
+        task.setStatus(0);
+        task.setId(1);
+
+        taskList.add(task);
+        taskList.add(task);
+        taskList.add(task);
+        taskList.add(task);
+        taskList.add(task);
+        taskList.add(task);
+        taskList.add(task);
+        taskList.add(task);
+
+        tasksAdapter.setTasks(taskList);*/
+
+
+
+
+
         dl = findViewById(R.id.dl);
         abdt = new ActionBarDrawerToggle( this, dl, R.string.Open, R.string.Close);
         abdt.setDrawerIndicatorEnabled(true);
