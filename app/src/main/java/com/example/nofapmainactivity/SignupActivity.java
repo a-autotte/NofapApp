@@ -13,11 +13,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.nofapmainactivity.dao.DatabaseDB;
+
 import com.example.nofapmainactivity.databinding.ActivitySignupBinding;
-import com.example.nofapmainactivity.exceptions.ExistingUserException;
-import com.example.nofapmainactivity.exceptions.PasswordNotEqualException;
-import com.example.nofapmainactivity.impl.AppService;
+
 import com.example.nofapmainactivity.modals.UserModal;
 
 import java.util.Locale;
@@ -36,11 +34,6 @@ public class SignupActivity extends AppCompatActivity {
         View view = binding.getRoot();
         setContentView(view);
 
-        DatabaseDB db = Room.databaseBuilder(getApplicationContext(), DatabaseDB.class, "UserList")
-                .allowMainThreadQueries()
-                .build();
-
-        AppService service = new AppService(db);
 
         binding.loginButtonId.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,13 +50,6 @@ public class SignupActivity extends AppCompatActivity {
                 userModal.userEmail = binding.emailEditId.getText().toString();
                 userModal.userPassword = binding.passwordEditId.getText().toString();
                 userModal.userConfirmPassword = binding.passwordConfirmId.getText().toString();
-                try {
-                    service.AddUser(userModal);
-                } catch (PasswordNotEqualException e) {
-                    Toast.makeText(getApplicationContext(), "ERROR", Toast.LENGTH_SHORT).show();
-                } catch (ExistingUserException e) {
-                    e.printStackTrace();
-                }
             }
         });
     }

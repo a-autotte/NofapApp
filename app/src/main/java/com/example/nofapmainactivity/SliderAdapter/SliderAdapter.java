@@ -12,7 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
 
 import com.example.nofapmainactivity.R;
-import com.example.nofapmainactivity.impl.AppService;
+
 
 public class SliderAdapter extends PagerAdapter {
 

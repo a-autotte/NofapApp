@@ -26,20 +26,20 @@
             android:textSize="32sp"
             />
 
-        <EditText
+        <!--<EditText
             android:id="@+id/editTextToDoListId"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/todolistexemple"
             android:maxLength="20"
             android:layout_below="@id/tasksText"
-            />
+            />-->
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/tasksRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/editTextToDoListId"
+            android:layout_below="@+id/tasksText"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             android:nestedScrollingEnabled="true"/>
             
