@@ -4,14 +4,18 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.DialogFragment;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -53,6 +57,9 @@ public class ToDoListActivity extends AppCompatActivity implements DialogCloseLi
         tasksAdapter = new ToDoAdapter(db, this);
         tasksRecyclerView.setAdapter(tasksAdapter);
 
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new RecyclerItemTouchHelper(tasksAdapter));
+        itemTouchHelper.attachToRecyclerView(tasksRecyclerView);
+
         buttonToDoList = findViewById(R.id.fab);
 
         taskList = db.getAllTasks();
@@ -65,18 +72,39 @@ public class ToDoListActivity extends AppCompatActivity implements DialogCloseLi
                 AddNewTask.newInstance().show(getSupportFragmentManager(), AddNewTask.TAG);
             }
         });
-        /*ToDoModel task = new ToDoModel();
-        task.setTask("This is a Test Task");
+
+
+
+        ToDoModel task = new ToDoModel();
+        task.setTask("Hello");
         task.setStatus(0);
         task.setId(1);
 
-        taskList.add(task);
-        taskList.add(task);
-        taskList.add(task);
-        taskList.add(task);
-        taskList.add(task);
+        db.insertTask(task);
+        db.insertTask(task);
+        db.insertTask(task);
+        db.insertTask(task);
+        db.insertTask(task);
+        tasksAdapter.setTasks(db.getAllTasks());
 
-        tasksAdapter.setTasks(taskList);*/
+
+        /*buttonToDoList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ToDoModel task = new ToDoModel();
+                task.setTask();
+                task.setStatus(0);
+                task.setId(db.getAllTasks().size() + 1);
+                taskList.add(task);
+                tasksAdapter.setTasks(taskList);
+                etToDoList.setText("");
+            }
+        });*/
+
+
+
+
+
         dl = findViewById(R.id.dl);
 
         abdt = new ActionBarDrawerToggle(this, dl, R.string.Open, R.string.Close);
@@ -120,22 +148,6 @@ public class ToDoListActivity extends AppCompatActivity implements DialogCloseLi
             }
         });
 
-        /*
-        etToDoList = findViewById(R.id.editTextToDoListId);
-        tvToDoList = findViewById(R.id.toDoListTextId);
-
-        buttonToDoList.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ToDoModel task = new ToDoModel();
-                task.setTask(etToDoList.getText().toString());
-                task.setStatus(0);
-                task.setId(1);
-                taskList.add(task);
-                tasksAdapter.setTasks(taskList);
-                etToDoList.setText("");
-            }
-        });*/
 
 
     }
