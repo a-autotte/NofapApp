@@ -142,6 +142,10 @@ public class ToDoListActivity extends AppCompatActivity implements DialogCloseLi
                     case R.id.IconToDoListId:
                         dl.closeDrawers();
                         break;
+
+                    case R.id.IconTrophyId:
+                        OpenActivity(TrophyActivity.class);
+                        break;
                 }
 
                 return true;

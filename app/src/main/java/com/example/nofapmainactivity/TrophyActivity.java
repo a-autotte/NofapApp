@@ -11,40 +11,42 @@ import android.view.MenuItem;
 
 import com.google.android.material.navigation.NavigationView;
 
-public class ProfileActivity extends AppCompatActivity {
-    private DrawerLayout dl;
+public class TrophyActivity extends AppCompatActivity {
     private ActionBarDrawerToggle abdt;
-
+    private DrawerLayout dl;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile);
-        dl = (DrawerLayout)findViewById(R.id.dl);
-        abdt = new ActionBarDrawerToggle(this, dl, R.string.Open, R.string.Close);
+        setContentView(R.layout.activity_trophy);
+
+        dl = findViewById(R.id.dl);
+        abdt = new ActionBarDrawerToggle( this, dl, R.string.Open, R.string.Close);
         abdt.setDrawerIndicatorEnabled(true);
 
         dl.addDrawerListener(abdt);
         abdt.syncState();
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        NavigationView nav_view = (NavigationView)findViewById(R.id.nav_view);
 
+
+
+        NavigationView nav_view = (NavigationView)findViewById(R.id.nav_view);
         nav_view.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int id = item.getItemId();
 
-                switch(id)
-                {
+                switch(id) {
                     case R.id.IconProfileId:
-                        dl.closeDrawers();
+                        OpenActivity(ProfileActivity.class);
                         break;
+
                     case R.id.IconSettingId:
                         OpenActivity(SettingsActivity.class);
                         break;
 
                     case R.id.IconTimerId:
-                        OpenActivity(TimerActivity.class);
+                        dl.closeDrawers();
                         break;
 
                     case R.id.IconCommunityId:
@@ -56,7 +58,7 @@ public class ProfileActivity extends AppCompatActivity {
                         break;
 
                     case R.id.IconTrophyId:
-                        OpenActivity(TrophyActivity.class);
+                        dl.closeDrawers();
                         break;
                 }
 
@@ -70,10 +72,9 @@ public class ProfileActivity extends AppCompatActivity {
         return abdt.onOptionsItemSelected(item) || super.onOptionsItemSelected(item);
     }
 
-    private void OpenActivity(Class<?> ActivityToOpen)
+    private void OpenActivity(Class<?> activity)
     {
-        Intent intent = new Intent(getApplicationContext(), ActivityToOpen);
+        Intent intent = new Intent(getApplicationContext(), activity);
         startActivity(intent);
     }
-
 }

@@ -32,6 +32,7 @@
     <string name="todolistexemple"> Tarea para hacer (por ejemplo: entrenar, jugar videojuegos, leer libros, estudiar, etc.) </string>
     <string name="addtask"> Agregar tarea </string>
     <string name="tasks"> Tareas </string>
+    <string name="achievement"> Logro </string>
 
     <array name="nofapservername">
         <item> NoFap Brotherhood </item>

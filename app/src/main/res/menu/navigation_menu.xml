@@ -39,5 +39,13 @@
 
     </item>
 
+    <item
+        android:id="@+id/IconTrophyId"
+        android:title="@string/achievement"
+        android:icon="@drawable/ic_baseline_trophy_24"
+        >
+
+    </item>
+
 
 </menu>

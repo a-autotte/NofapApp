@@ -138,6 +138,10 @@ public class SettingsActivity extends AppCompatActivity {
                 case R.id.IconToDoListId:
                     OpenActivity(ToDoListActivity.class);
                     break;
+
+                case R.id.IconTrophyId:
+                    OpenActivity(TrophyActivity.class);
+                    break;
             }
             return true;
         });
