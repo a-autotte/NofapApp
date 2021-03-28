@@ -91,5 +91,20 @@
         <item>DON\'T FAPP!</item>
     </array>
     <string name="nofapserverdescription"> this is user description for all items </string>
+    <string name="description1"> Welcome to this journey padawan you\'ve come to the right place you will learn a lot and our missions is to help you to fight your addiction and impulses</string>
+    <string name="description2"> With meditation, you help yourself to clear your mind and distract about all you think in your mind. It helps you have a control of your impulses and your energy </string>
+    <string name="description3"> With training, you push your limits and build your focus which would help you to focus on your everyday tasks </string>
+    <string name="description4"> With sleeping, you help your brain to be relaxed and help yourself about fighting the stress </string>
+    <string name="heading1"> WELCOME </string>
+    <string name="heading2"> MEDITATION </string>
+    <string name="heading3"> TRAINING </string>
+    <string name="heading4"> SLEEPING </string>
+    <string name="prev"> Back </string>
+    <string name="next"> Next </string>
+    <string name="finish"> Finish </string>
+    <string name="day"> Day </string>
+    <string name="week"> Week </string>
+    <string name="month"> Month </string>
+    <string name="year"> Year </string>
 
 </resources>

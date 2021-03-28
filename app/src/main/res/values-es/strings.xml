@@ -47,4 +47,20 @@
 
     </array>
     <string name="nofapserverdescription"> this is user description for all items </string>
+    <string name="description1"> Bienvenido a este viaje padawan, has venido al lugar correcto, aprenderás mucho y nuestra misión es ayudarte a combatir tu adicción e impulsos </string>
+    <string name="description2"> Con la meditación, te ayudas a despejar tu mente y distraerte de todo lo que piensas en tu mente. Te ayuda a tener un control de tus impulsos y tu energía. </string>
+    <string name="description3"> Con el entrenamiento, superas tus límites y construyes tu enfoque, lo que te ayudaría a concentrarte en tus tareas diarias. </string>
+    <string name="description4"> Con el sueño, ayuda a que su cerebro se relaje y se ayuda a sí mismo a combatir el estrés. </string>
+    <string name="heading1"> BIENVENIDO </string>
+    <string name="heading2"> MEDITACIÓN </string>
+    <string name="heading3"> CAPACITACIÓN </string>
+    <string name="heading4"> DORMIDO </string>
+    <string name="prev"> Atrás </string>
+    <string name="next"> Próximo </string>
+    <string name="finish"> Terminar </string>
+    <string name="day"> Día </string>
+    <string name="week"> Semana </string>
+    <string name="month"> Mes </string>
+    <string name="year"> Año </string>
+
 </resources>

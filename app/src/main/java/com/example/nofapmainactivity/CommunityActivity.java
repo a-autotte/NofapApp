@@ -15,10 +15,9 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
 
-import com.example.nofapmainactivity.databinding.ActivityCommunityBinding;
+import com.example.nofapmainactivity.Adapter.NofapServer;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
@@ -52,7 +51,7 @@ public class CommunityActivity extends AppCompatActivity {
         adapter = new RecyclerViewAdapter(this, list);
         recyclerView.setAdapter(adapter);
 
-        dl = (DrawerLayout)findViewById(R.id.dl);
+        dl = findViewById(R.id.dl);
         abdt = new ActionBarDrawerToggle(this, dl, R.string.Open, R.string.Close);
         abdt.setDrawerIndicatorEnabled(true);
 

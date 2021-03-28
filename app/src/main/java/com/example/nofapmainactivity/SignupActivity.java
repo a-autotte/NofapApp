@@ -56,7 +56,7 @@ public class SignupActivity extends AppCompatActivity {
 
     public void OpenActivity()
     {
-        Intent intent = new Intent(getApplicationContext(), MainPageActivity.class);
+        Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
         startActivity(intent);
     }
 

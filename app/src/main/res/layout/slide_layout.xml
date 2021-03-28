@@ -1,67 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-
-    >
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/img"
+        android:id="@+id/imageView2"
         android:layout_width="wrap_content"
-        android:layout_height="900dp"
-        android:elevation="2dp"
-        android:src="@drawable/ic_launcher_background"
-        app:layout_constraintVertical_bias="0"
-        android:scaleType="centerCrop"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
-
-    <ImageView
-        android:id="@+id/logo"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:elevation="2dp"
-        android:src="@drawable/meditation_icon"
-        app:layout_constraintVertical_bias=".1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
-
-    <ImageView
-        android:id="@+id/app_name"
-        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:elevation="2dp"
-        android:src="@drawable/ic_launcher_background"
-        app:layout_constraintVertical_bias="0"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logo"/>
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginHorizontal="@android:dimen/app_icon_size"
+        android:layout_below="@id/heading"
+        />
 
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/lottie"
-        app:lottie_autoPlay="true"
-        android:elevation="2dp"
+    <TextView
+        android:id="@+id/heading"
         android:layout_width="wrap_content"
-        android:layout_height="200dp"
-        app:layout_constraintVertical_bias="0"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        />
-
-    <com.cuberto.liquid_swipe.LiquidPager
-        android:id="@+id/pager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        />
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/orange_yellow"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
 
 
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="hello"
+        android:layout_marginHorizontal="@android:dimen/app_icon_size"
+        android:fontFamily="sans-serif"
+        android:lineSpacingExtra="10sp"
+        android:paddingVertical="@android:dimen/app_icon_size"
+        android:singleLine="false"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/orange_yellow"
+        android:gravity="center_horizontal" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+</RelativeLayout>

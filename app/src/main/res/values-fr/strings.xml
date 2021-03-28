@@ -46,4 +46,20 @@
         <item> DON\'T FAPP! </item>
     </array>
     <string name="nofapserverdescription"> this is user description for all items </string>
+    <string name="description1"> Bienvenue dans cette quête jeune padawan, tu es à la bonne place tu vas en apprendre beaucoup et notre mission est de vous aider à vaincre votre addiction et vos envies </string>
+    <string name="description2"> Avec la méditation, vous aidez à vider votre esprit et à vous distraire de tous ce que vous pensez dans votre tête. Ça vous aide à avoir un contrôle sur vos pulsions et votre énergie </string>
+    <string name="description3"> Avec l\'entrainement, vous poussez vos limites et construisez votre concentration ce qui va vous aider à vous concentrer dans les tâches quotidiennes  </string>
+    <string name="description4"> Avec le sommeil, vous aidez votre cerveau à être bien reposé ce qui vous aide dans le combat contre le stress </string>
+    <string name="heading1"> BIENVENUE </string>
+    <string name="heading2"> MÉDITATION </string>
+    <string name="heading3"> ENTRAINEMENT </string>
+    <string name="heading4"> SOMMEIL </string>
+    <string name="prev"> Précédent </string>
+    <string name="next"> Suivant </string>
+    <string name="finish"> Finir </string>
+    <string name="day"> Jour </string>
+    <string name="week"> Semaine </string>
+    <string name="month"> Mois </string>
+    <string name="year"> Année </string>
+
 </resources>

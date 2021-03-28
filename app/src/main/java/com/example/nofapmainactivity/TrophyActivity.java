@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
+import android.graphics.Path;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -46,7 +47,7 @@ public class TrophyActivity extends AppCompatActivity {
                         break;
 
                     case R.id.IconTimerId:
-                        dl.closeDrawers();
+                        OpenActivity(TimerActivity.class);
                         break;
 
                     case R.id.IconCommunityId:

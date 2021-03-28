@@ -1,4 +1,4 @@
-package com.example.nofapmainactivity;
+package com.example.nofapmainactivity.Adapter;
 
 public class NofapServer {
     private int imageProfile;

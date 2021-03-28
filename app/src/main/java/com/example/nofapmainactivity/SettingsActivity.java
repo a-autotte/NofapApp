@@ -57,37 +57,38 @@ import java.util.Locale;
 
 public class SettingsActivity extends AppCompatActivity {
 
-    private GoogleSignInClient mGoogleSignInClient;
-    private  String TAGGoogle = "SettingsActivity";
-    private FirebaseAuth mAuth;
+    GoogleSignInClient mGoogleSignInClient;
+    String TAGGoogle = "SettingsActivity";
+    FirebaseAuth mAuth;
 
-    private int RC_SIGN_IN = 1;
+    int RC_SIGN_IN = 1;
 
-    private ActionBarDrawerToggle abdt;
-    private CallbackManager mCallbackManager;
-    private FirebaseAuth mFirebaseAuth;
-    private FirebaseAuth.AuthStateListener authStateListener;
-    private ImageView mLogo;
-    private AccessTokenTracker accessTokenTracker;
-    private static final String TAG = "FacebookAuthentication";
+    ActionBarDrawerToggle abdt;
+    CallbackManager mCallbackManager;
+    FirebaseAuth mFirebaseAuth;
+    FirebaseAuth.AuthStateListener authStateListener;
+    ImageView mLogo;
+    AccessTokenTracker accessTokenTracker;
+    static final String TAG = "FacebookAuthentication";
     ActivitySettingsBinding binding;
+    DrawerLayout dl;
+    NavigationView nav_settings;
+    NavigationView nav_view;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         loadLocale();
-        binding = ActivitySettingsBinding.inflate(getLayoutInflater());
-        View view = binding.getRoot();
-        setContentView(view);
+        setContentView(R.layout.activity_settings);
         abdt = new ActionBarDrawerToggle(this, binding.dl, R.string.Open, R.string.Close);
         abdt.setDrawerIndicatorEnabled(true);
 
-        binding.dl.addDrawerListener(abdt);
+        dl.addDrawerListener(abdt);
         abdt.syncState();
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
-        binding.navSetting.setNavigationItemSelectedListener(item -> {
+        nav_settings.setNavigationItemSelectedListener(item -> {
             int id = item.getItemId();
 
             switch(id)
@@ -114,7 +115,7 @@ public class SettingsActivity extends AppCompatActivity {
         });
 
 
-        binding.navView.setNavigationItemSelectedListener(item -> {
+        nav_view.setNavigationItemSelectedListener(item -> {
             int id = item.getItemId();
 
             switch (id)
