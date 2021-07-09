@@ -1,11 +1,9 @@
 package com.example.nofapmainactivity;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
@@ -14,25 +12,17 @@ import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Toast;
 
-import com.example.nofapmainactivity.Adapter.ToDoAdapter;
-import com.example.nofapmainactivity.databinding.ActivityMainPageBinding;
-import com.example.nofapmainactivity.databinding.ActivitySignupBinding;
-import com.example.nofapmainactivity.modals.ToDoModel;
+import com.example.nofapmainactivity.Modals.ToDoModel;
 import com.google.android.material.navigation.NavigationView;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
-import java.util.Objects;
 
 public class MainPageActivity extends AppCompatActivity {
     private DrawerLayout dl;
     private ActionBarDrawerToggle abdt;
     private RecyclerView tasksRecyclerView;
-    private ToDoAdapter tasksAdapter;
 
     private List<ToDoModel> taskList;
 
@@ -107,6 +97,7 @@ public class MainPageActivity extends AppCompatActivity {
                         OpenActivity(ToDoListActivity.class);
                         break;
 
+
                     case R.id.IconTrophyId:
                         OpenActivity(TrophyActivity.class);
                         break;
@@ -141,7 +132,7 @@ public class MainPageActivity extends AppCompatActivity {
 
     public void loadLocale()
     {
-        SharedPreferences prefs = getSharedPreferences("Settings", Activity.MODE_PRIVATE);
+        SharedPreferences prefs = getSharedPreferences("Settings", MODE_PRIVATE);
         String language = prefs.getString("My_Lang", "");
         setLocale(language);
 

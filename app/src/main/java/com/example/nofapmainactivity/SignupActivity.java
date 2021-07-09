@@ -1,7 +1,6 @@
 package com.example.nofapmainactivity;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.room.Room;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -11,12 +10,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 
 import com.example.nofapmainactivity.databinding.ActivitySignupBinding;
 
-import com.example.nofapmainactivity.modals.UserModal;
+import com.example.nofapmainactivity.Modals.UserModal;
 
 import java.util.Locale;
 

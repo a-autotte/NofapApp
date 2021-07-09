@@ -1,4 +1,4 @@
-package com.example.nofapmainactivity.modals;
+package com.example.nofapmainactivity.Modals;
 
 
 import androidx.room.ColumnInfo;

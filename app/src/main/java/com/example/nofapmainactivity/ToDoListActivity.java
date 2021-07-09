@@ -1,178 +1,103 @@
 package com.example.nofapmainactivity;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.app.DialogFragment;
 import android.content.DialogInterface;
-import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.os.Bundle;
-import android.view.MenuItem;
+import android.text.Html;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
-import com.example.nofapmainactivity.Adapter.ToDoAdapter;
-import com.example.nofapmainactivity.Utils.DatabaseHandler;
-import com.example.nofapmainactivity.modals.ToDoModel;
+import com.example.nofapmainactivity.Adapter.ToDoListAdapter;
+import com.example.nofapmainactivity.Database.OpenHelper;
+import com.example.nofapmainactivity.Modals.ToDoModel;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
+import java.util.Locale;
 
-public class ToDoListActivity extends AppCompatActivity implements DialogCloseListener {
+public class ToDoListActivity extends AppCompatActivity {
     private DrawerLayout dl;
     private ActionBarDrawerToggle abdt;
-    private FloatingActionButton buttonToDoList;
-    private TextView tvToDoList;
-    private EditText etToDoList;
     private RecyclerView tasksRecyclerView;
-    private ToDoAdapter tasksAdapter;
-    private List<ToDoModel> taskList;
-    private DatabaseHandler db;
+    ToDoListAdapter tasksAdapter;
+    private ArrayList<ToDoModel> taskList;
+    OpenHelper oh;
+    AlertDialog.Builder builder;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        loadLocale();
         setContentView(R.layout.activity_to_do_list);
-
-        db = new DatabaseHandler(this);
-        db.openDatabase();
-
-        taskList = new ArrayList<>();
-
+        getSupportActionBar().hide();
+        /*taskList = new ArrayList<>();
         tasksRecyclerView = findViewById(R.id.tasksRecyclerView);
         tasksRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        tasksAdapter = new ToDoAdapter(db, this);
+
+        tasksAdapter = new ToDoListAdapter(taskList);
         tasksRecyclerView.setAdapter(tasksAdapter);
 
-        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new RecyclerItemTouchHelper(tasksAdapter));
-        itemTouchHelper.attachToRecyclerView(tasksRecyclerView);
-
-        buttonToDoList = findViewById(R.id.fab);
-
-        taskList = db.getAllTasks();
-        Collections.reverse(taskList);
-        tasksAdapter.setTasks(taskList);
-
-        buttonToDoList.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                AddNewTask.newInstance().show(getSupportFragmentManager(), AddNewTask.TAG);
-            }
-        });
-
-
-
         ToDoModel task = new ToDoModel();
-        task.setTask("Hello");
+        task.setTask("This is a Test Task");
         task.setStatus(0);
         task.setId(1);
 
-        db.insertTask(task);
-        db.insertTask(task);
-        db.insertTask(task);
-        db.insertTask(task);
-        db.insertTask(task);
-        tasksAdapter.setTasks(db.getAllTasks());
+        taskList.add(task);
+        taskList.add(task);
+        taskList.add(task);
+        taskList.add(task);
+        taskList.add(task);
+        taskList.add(task);
+        taskList.add(task);
+        taskList.add(task);
 
+        tasksAdapter.dataSet.addAll(taskList);*/
 
-        /*buttonToDoList.setOnClickListener(new View.OnClickListener() {
-            @Override
+        FloatingActionButton btn_addTask = (FloatingActionButton)findViewById(R.id.fab);
+
+        btn_addTask.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                ToDoModel task = new ToDoModel();
-                task.setTask();
-                task.setStatus(0);
-                task.setId(db.getAllTasks().size() + 1);
-                taskList.add(task);
-                tasksAdapter.setTasks(taskList);
-                etToDoList.setText("");
-            }
-        });*/
-
-
-
-
-
-        dl = findViewById(R.id.dl);
-
-        abdt = new ActionBarDrawerToggle(this, dl, R.string.Open, R.string.Close);
-        abdt.setDrawerIndicatorEnabled(true);
-
-        dl.addDrawerListener(abdt);
-        abdt.syncState();
-
-
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        NavigationView nav_view = findViewById(R.id.nav_view);
-        nav_view.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                int id = item.getItemId();
-
-                switch(id)
-                {
-                    case R.id.IconCommunityId:
-                        OpenActivity(CommunityActivity.class);
-                        break;
-
-                    case R.id.IconSettingId:
-                        OpenActivity(SettingsActivity.class);
-                        break;
-
-                    case R.id.IconProfileId:
-                        OpenActivity(ProfileActivity.class);
-                        break;
-
-                    case R.id.IconTimerId:
-                        OpenActivity(TimerActivity.class);
-                        break;
-
-                    case R.id.IconToDoListId:
-                        dl.closeDrawers();
-                        break;
-
-                    case R.id.IconTrophyId:
-                        OpenActivity(TrophyActivity.class);
-                        break;
-                }
-
-                return true;
+                builder.setTitle("Add");
+                builder.setMessage("Do you want to add a task").setCancelable(false).setPositiveButton(Html.fromHtml("<font color='#000000'>Yes</font>"), (DialogInterface.OnClickListener) new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        EditText editText = (EditText)findViewById(R.id.newTaskText);
+                        editText.getText();
+                    }
+                }).setNegativeButton((CharSequence) Html.fromHtml("<font color='#000000'>No</font>"), (DialogInterface.OnClickListener) new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.cancel();
+                    }
+                });
             }
         });
 
-
-
     }
 
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        return abdt.onOptionsItemSelected(item) || super.onOptionsItemSelected(item);
+
+
+    private void setLocale(String lang) {
+        Locale locale = new Locale(lang);
+        locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.locale = locale;
+        getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
+        SharedPreferences.Editor editor = getSharedPreferences("My_Lang", MODE_PRIVATE).edit();
+        editor.putString("My_Lang",lang);
+        editor.apply();
     }
 
-    private void OpenActivity(Class<?> Activity)
-    {
-        Intent intent = new Intent(getApplicationContext(), Activity);
-        startActivity(intent);
-    }
-
-    @Override
-    public void handleDialogClose(DialogInterface dialog) {
-        taskList = db.getAllTasks();
-        Collections.reverse(taskList);
-        tasksAdapter.setTasks(taskList);
-        tasksAdapter.notifyDataSetChanged();
-
+    private void loadLocale() {
+        SharedPreferences prefs = getSharedPreferences("Settings", MODE_PRIVATE);
+        String lang = prefs.getString("My_Lang", "");
+        setLocale(lang);
     }
 }

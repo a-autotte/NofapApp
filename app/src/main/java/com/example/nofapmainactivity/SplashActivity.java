@@ -70,14 +70,13 @@ public class SplashActivity extends AppCompatActivity {
                     case R.id.IconTimerId:
                         OpenActivity(TimerActivity.class);
                         break;
-
+                    case R.id.IconToDoListId:
+                        OpenActivity(ToDoListActivity.class);
+                        break;
                     case R.id.IconCommunityId:
                         OpenActivity(CommunityActivity.class);
                         break;
 
-                    case R.id.IconToDoListId:
-                        OpenActivity(ToDoListActivity.class);
-                        break;
                 }
 
 
