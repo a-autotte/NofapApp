@@ -1,4 +1,4 @@
-package com.example.nofapmainactivity;
+package com.example.nofapmainactivity.Settings;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -8,7 +8,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.app.Activity;
-import android.content.ClipData;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -18,11 +17,15 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.nofapmainactivity.Community.CommunityActivity;
+import com.example.nofapmainactivity.Profile.ProfileActivity;
+import com.example.nofapmainactivity.R;
+import com.example.nofapmainactivity.Timer.TimerActivity;
+import com.example.nofapmainactivity.ToDoList.ToDoListActivity;
+import com.example.nofapmainactivity.Trophy.TrophyActivity;
 import com.example.nofapmainactivity.databinding.ActivitySettingsBinding;
 import com.facebook.AccessToken;
 import com.facebook.AccessTokenTracker;
@@ -30,16 +33,13 @@ import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
 import com.facebook.FacebookSdk;
-import com.facebook.appevents.AppEventsLogger;
 
 
 import com.facebook.login.LoginResult;
-import com.facebook.login.widget.LoginButton;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -78,7 +78,7 @@ public class SettingsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         loadLocale();
-        setContentView(R.layout.activity_settings);
+        //setContentView(R.layout.activity_settings);
         abdt = new ActionBarDrawerToggle(this, binding.dl, R.string.Open, R.string.Close);
         abdt.setDrawerIndicatorEnabled(true);
 

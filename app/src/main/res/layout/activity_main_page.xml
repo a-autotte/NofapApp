@@ -6,7 +6,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:id="@+id/dl"
-    tools:context=".MainPageActivity">
+    tools:context=".MainPage.MainPageActivity">
+
+    <include layout="@layout/layout_fragment_container"/>
 
     <com.google.android.material.navigation.NavigationView
         android:layout_width="wrap_content"

@@ -1,4 +1,4 @@
-package com.example.nofapmainactivity.Slider;
+package com.example.nofapmainactivity.Introductory;
 
 import android.content.Context;
 import android.view.LayoutInflater;

@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/main_background"
     >
+    <include layout="@layout/layout_fragment_container"/>
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/slideviewpager"

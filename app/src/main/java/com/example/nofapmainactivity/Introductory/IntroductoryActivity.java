@@ -1,28 +1,27 @@
-package com.example.nofapmainactivity.Slider;
+package com.example.nofapmainactivity.Introductory;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.text.Html;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
-import com.example.nofapmainactivity.ProfileActivity;
+import com.example.nofapmainactivity.AppDefaultActivity;
 import com.example.nofapmainactivity.R;
-import com.example.nofapmainactivity.SignupActivity;
+import com.example.nofapmainactivity.Signup.SignupActivity;
 
 import java.util.Locale;
 
-public class IntroductoryActivity extends AppCompatActivity {
+public class IntroductoryActivity extends AppDefaultActivity {
 
     ViewPager mSlideViewPager;
     LinearLayout mDotLayout;
@@ -39,7 +38,7 @@ public class IntroductoryActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         loadLocale();
-        setContentView(R.layout.introductory_activity);
+        //setContentView(R.layout.introductory_activity);
 
         mSlideViewPager = findViewById(R.id.slideviewpager);
         mDotLayout = findViewById(R.id.linearLayout);
@@ -75,6 +74,17 @@ public class IntroductoryActivity extends AppCompatActivity {
                 mSlideViewPager.setCurrentItem(mCurrentPage - 1);
             }
         });
+    }
+
+    @Override
+    protected int contentViewLayoutRes() {
+        return R.layout.introductory_activity;
+    }
+
+    @NonNull
+    @Override
+    protected Fragment createInitialFragment() {
+        return IntroductoryFragment.newInstance();
     }
 
     public void addDotsIndicator(int position)

@@ -12,15 +12,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NofapMainActivity">
-        <activity android:name=".ToDoListActivity"></activity>
-        <activity android:name=".TrophyActivity" />
-        <activity android:name=".CommunityActivity" />
-        <activity android:name=".TimerActivity" />
-        <activity android:name=".SettingsActivity" />
-        <activity android:name=".ProfileActivity" />
-        <activity android:name=".MainPageActivity" />
-        <activity android:name=".SignupActivity" />
-        <activity android:name=".Slider.IntroductoryActivity">
+        <activity android:name=".ToDoList.ToDoListActivity"></activity>
+        <activity android:name=".Trophy.TrophyActivity" />
+        <activity android:name=".Community.CommunityActivity" />
+        <activity android:name=".Timer.TimerActivity" />
+        <activity android:name=".Settings.SettingsActivity" />
+        <activity android:name=".Profile.ProfileActivity" />
+        <activity android:name=".MainPage.MainPageActivity" />
+        <activity android:name=".Signup.SignupActivity" />
+        <activity android:name=".Introductory.IntroductoryActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

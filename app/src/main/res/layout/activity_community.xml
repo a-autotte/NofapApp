@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:id="@+id/dl"
-    tools:context=".CommunityActivity">
+    tools:context=".Community.CommunityActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:background="@drawable/main_background"

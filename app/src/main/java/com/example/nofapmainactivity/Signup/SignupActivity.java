@@ -1,6 +1,8 @@
-package com.example.nofapmainactivity;
+package com.example.nofapmainactivity.Signup;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -12,13 +14,16 @@ import android.widget.Button;
 import android.widget.EditText;
 
 
+import com.example.nofapmainactivity.AppDefaultActivity;
+import com.example.nofapmainactivity.Profile.ProfileActivity;
+import com.example.nofapmainactivity.R;
 import com.example.nofapmainactivity.databinding.ActivitySignupBinding;
 
 import com.example.nofapmainactivity.Modals.UserModal;
 
 import java.util.Locale;
 
-public class SignupActivity extends AppCompatActivity {
+public class SignupActivity extends AppDefaultActivity {
 
     ActivitySignupBinding binding;
 
@@ -50,6 +55,17 @@ public class SignupActivity extends AppCompatActivity {
                 userModal.userConfirmPassword = binding.passwordConfirmId.getText().toString();
             }
         });
+    }
+
+    @Override
+    protected int contentViewLayoutRes() {
+        return R.layout.activity_signup;
+    }
+
+    @NonNull
+    @Override
+    protected Fragment createInitialFragment() {
+        return SignupFragment.newInstance();
     }
 
     public void OpenActivity()

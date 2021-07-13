@@ -1,4 +1,4 @@
-package com.example.nofapmainactivity;
+package com.example.nofapmainactivity.Timer;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -6,22 +6,29 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
 
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.CountDownTimer;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.nofapmainactivity.AppDefaultActivity;
+import com.example.nofapmainactivity.Community.CommunityActivity;
+import com.example.nofapmainactivity.Profile.ProfileActivity;
+import com.example.nofapmainactivity.R;
+import com.example.nofapmainactivity.Settings.SettingsActivity;
+import com.example.nofapmainactivity.ToDoList.ToDoListActivity;
+import com.example.nofapmainactivity.Trophy.TrophyActivity;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class TimerActivity extends AppCompatActivity {
+public class TimerActivity extends AppDefaultActivity {
     private DrawerLayout dl;
     private ActionBarDrawerToggle abdt;
     TextView timerText;
@@ -93,6 +100,17 @@ public class TimerActivity extends AppCompatActivity {
     }
 
     @Override
+    protected int contentViewLayoutRes() {
+        return R.layout.activity_timer;
+    }
+
+    @NonNull
+    @Override
+    protected Fragment createInitialFragment() {
+        return null;
+    }
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         return abdt.onOptionsItemSelected(item) || super.onOptionsItemSelected(item);
     }
@@ -102,13 +120,6 @@ public class TimerActivity extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), ActivityToOpen);
         startActivity(intent);
     }
-
-
-
-
-
-
-
     public void resetTapped(View view)
     {
         AlertDialog.Builder resetAlert = new AlertDialog.Builder(this);

@@ -1,10 +1,11 @@
-package com.example.nofapmainactivity;
+package com.example.nofapmainactivity.Community;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -18,13 +19,21 @@ import android.view.MenuItem;
 
 
 import com.example.nofapmainactivity.Adapter.NofapServer;
+import com.example.nofapmainactivity.AppDefaultActivity;
+import com.example.nofapmainactivity.Profile.ProfileActivity;
+import com.example.nofapmainactivity.R;
+import com.example.nofapmainactivity.RecyclerViewAdapter;
+import com.example.nofapmainactivity.Settings.SettingsActivity;
+import com.example.nofapmainactivity.Timer.TimerActivity;
+import com.example.nofapmainactivity.ToDoList.ToDoListActivity;
+import com.example.nofapmainactivity.Trophy.TrophyActivity;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-public class CommunityActivity extends AppCompatActivity {
+public class CommunityActivity extends AppDefaultActivity {
     //ActivityCommunityBinding binding;
     private DrawerLayout dl;
     ActionBarDrawerToggle abdt;
@@ -35,7 +44,7 @@ public class CommunityActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_community);
+        //setContentView(R.layout.activity_community);
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         String username[] = getResources().getStringArray(R.array.nofapservername);
@@ -100,6 +109,17 @@ public class CommunityActivity extends AppCompatActivity {
 
 
 
+    }
+
+    @Override
+    protected int contentViewLayoutRes() {
+        return R.layout.activity_community;
+    }
+
+    @NonNull
+    @Override
+    protected Fragment createInitialFragment() {
+        return null;
     }
 
     @Override

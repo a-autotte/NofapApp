@@ -9,8 +9,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.MenuItem;
-import android.widget.AdapterView;
 
+import com.example.nofapmainactivity.Community.CommunityActivity;
+import com.example.nofapmainactivity.MainPage.MainPageActivity;
+import com.example.nofapmainactivity.Profile.ProfileActivity;
+import com.example.nofapmainactivity.Settings.SettingsActivity;
+import com.example.nofapmainactivity.Timer.TimerActivity;
+import com.example.nofapmainactivity.ToDoList.ToDoListActivity;
 import com.google.android.material.navigation.NavigationView;
 
 public class SplashActivity extends AppCompatActivity {

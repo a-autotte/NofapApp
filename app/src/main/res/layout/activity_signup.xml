@@ -5,7 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/main_background"
-    tools:context=".SignupActivity">
+    tools:context=".Signup.SignupActivity">
+
+    <include layout="@layout/layout_fragment_container"/>
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/slideViewPager"

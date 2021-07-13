@@ -7,7 +7,7 @@
     android:id="@+id/dl"
     android:background="@drawable/main_background"
     android:orientation="vertical"
-    tools:context=".TrophyActivity">
+    tools:context=".Trophy.TrophyActivity">
 
         <GridLayout
             android:layout_width="match_parent"

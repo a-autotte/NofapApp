@@ -1,25 +1,32 @@
-package com.example.nofapmainactivity;
+package com.example.nofapmainactivity.MainPage;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.nofapmainactivity.AppDefaultActivity;
+import com.example.nofapmainactivity.Community.CommunityActivity;
 import com.example.nofapmainactivity.Modals.ToDoModel;
+import com.example.nofapmainactivity.Profile.ProfileActivity;
+import com.example.nofapmainactivity.R;
+import com.example.nofapmainactivity.Settings.SettingsActivity;
+import com.example.nofapmainactivity.Timer.TimerActivity;
+import com.example.nofapmainactivity.ToDoList.ToDoListActivity;
+import com.example.nofapmainactivity.Trophy.TrophyActivity;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.List;
 import java.util.Locale;
 
-public class MainPageActivity extends AppCompatActivity {
+public class MainPageActivity extends AppDefaultActivity {
     private DrawerLayout dl;
     private ActionBarDrawerToggle abdt;
     private RecyclerView tasksRecyclerView;
@@ -29,8 +36,8 @@ public class MainPageActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        loadLocale();
-        setContentView(R.layout.activity_main_page);
+        //loadLocale();
+        //setContentView(R.layout.activity_main_page);
         /*getSupportActionBar().hide();
 
         taskList = new ArrayList<>();
@@ -72,7 +79,7 @@ public class MainPageActivity extends AppCompatActivity {
         NavigationView navView = findViewById(R.id.nav_view);
         navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            public boolean onNavigationItemSelected(MenuItem item) {
                 int id = item.getItemId();
 
                 switch (id)
@@ -105,6 +112,22 @@ public class MainPageActivity extends AppCompatActivity {
                 return true;
             }
         });
+    }
+
+    @Override
+    protected int contentViewLayoutRes() {
+        return R.layout.activity_main_page;
+    }
+
+    @NonNull
+    @Override
+    protected Fragment createInitialFragment() {
+        return MainPageFragment.newInstance();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
     }
 
     @Override
