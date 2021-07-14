@@ -10,11 +10,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.nofapmainactivity.Database.OpenHelper;
-import com.example.nofapmainactivity.Modals.ToDoModel;
+import com.example.nofapmainactivity.Utility.Modals.ToDoModel;
 import com.example.nofapmainactivity.R;
 
 import java.util.ArrayList;

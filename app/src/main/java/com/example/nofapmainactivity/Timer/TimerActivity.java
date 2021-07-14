@@ -107,7 +107,7 @@ public class TimerActivity extends AppDefaultActivity {
     @NonNull
     @Override
     protected Fragment createInitialFragment() {
-        return null;
+        return TimerFragment.newInstance();
     }
 
     @Override

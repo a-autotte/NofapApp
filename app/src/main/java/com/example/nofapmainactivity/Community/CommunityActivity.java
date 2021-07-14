@@ -119,7 +119,7 @@ public class CommunityActivity extends AppDefaultActivity {
     @NonNull
     @Override
     protected Fragment createInitialFragment() {
-        return null;
+        return CommunityFragment.newInstance();
     }
 
     @Override

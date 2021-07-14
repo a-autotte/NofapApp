@@ -6,6 +6,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
 
 import android.app.Activity;
 import android.content.DialogInterface;
@@ -17,9 +18,13 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.nofapmainactivity.AppDefaultActivity;
+import com.example.nofapmainactivity.AppDefaultFragment;
 import com.example.nofapmainactivity.Community.CommunityActivity;
 import com.example.nofapmainactivity.Profile.ProfileActivity;
 import com.example.nofapmainactivity.R;
@@ -36,10 +41,12 @@ import com.facebook.FacebookSdk;
 
 
 import com.facebook.login.LoginResult;
+import com.facebook.login.widget.LoginButton;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -55,7 +62,7 @@ import com.squareup.picasso.Picasso;
 import java.util.Locale;
 
 
-public class SettingsActivity extends AppCompatActivity {
+public class SettingsActivity extends AppDefaultActivity {
 
     GoogleSignInClient mGoogleSignInClient;
     String TAGGoogle = "SettingsActivity";
@@ -63,15 +70,19 @@ public class SettingsActivity extends AppCompatActivity {
 
     int RC_SIGN_IN = 1;
 
-    ActionBarDrawerToggle abdt;
     CallbackManager mCallbackManager;
     FirebaseAuth mFirebaseAuth;
     FirebaseAuth.AuthStateListener authStateListener;
     ImageView mLogo;
     AccessTokenTracker accessTokenTracker;
     static final String TAG = "FacebookAuthentication";
-    ActivitySettingsBinding binding;
-    DrawerLayout dl;
+
+    private DrawerLayout dl;
+    private ActionBarDrawerToggle abdt;
+    LoginButton loginButton;
+    SignInButton signInButton;
+    private Button signOutButton;
+    private TextView textUser;
     NavigationView nav_settings;
     NavigationView nav_view;
     @Override
@@ -79,7 +90,13 @@ public class SettingsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         loadLocale();
         //setContentView(R.layout.activity_settings);
-        abdt = new ActionBarDrawerToggle(this, binding.dl, R.string.Open, R.string.Close);
+        dl = findViewById(R.id.dl);
+        loginButton = (LoginButton)findViewById(R.id.login_button);
+        signInButton = (SignInButton)findViewById(R.id.sign_in_button);
+        signOutButton = (Button)findViewById(R.id.sign_out_button);
+        textUser = (TextView)findViewById(R.id.text_user);
+
+        abdt = new ActionBarDrawerToggle(this, dl, R.string.Open, R.string.Close);
         abdt.setDrawerIndicatorEnabled(true);
 
         dl.addDrawerListener(abdt);
@@ -125,7 +142,7 @@ public class SettingsActivity extends AppCompatActivity {
                     break;
 
                 case R.id.IconSettingId:
-                    binding.dl.closeDrawers();
+                    dl.closeDrawers();
                     break;
 
                 case R.id.IconTimerId:
@@ -152,10 +169,10 @@ public class SettingsActivity extends AppCompatActivity {
 
 
 
-        binding.loginButton.setReadPermissions("email", "public_profile");
+        loginButton.setReadPermissions("email", "public_profile");
 
         mCallbackManager = CallbackManager.Factory.create();
-        binding.loginButton.registerCallback(mCallbackManager, new FacebookCallback<LoginResult>() {
+        loginButton.registerCallback(mCallbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
                 Log.d(TAG, "onSuccess" + loginResult);
@@ -210,13 +227,24 @@ public class SettingsActivity extends AppCompatActivity {
 
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
-        binding.signInButton.setOnClickListener(viewNav -> signIn());
+        signInButton.setOnClickListener(viewNav -> signIn());
 
-        binding.signOutButton.setOnClickListener(viewNav -> {
+        signOutButton.setOnClickListener(viewNav -> {
             mGoogleSignInClient.signOut();
             Toast.makeText(SettingsActivity.this,"You are Logged Out",Toast.LENGTH_SHORT).show();
-            binding.signOutButton.setVisibility(View.INVISIBLE);
+            signOutButton.setVisibility(View.INVISIBLE);
         });
+    }
+
+    @Override
+    protected int contentViewLayoutRes() {
+        return R.layout.activity_settings;
+    }
+
+    @NonNull
+    @Override
+    protected Fragment createInitialFragment() {
+        return SettingsFragment.newInstance();
     }
 
     private void signIn(){
@@ -295,10 +323,10 @@ public class SettingsActivity extends AppCompatActivity {
             }
 
         } else {
-            binding.textUser.setText("");
+            textUser.setText("");
         }
 
-        binding.signOutButton.setVisibility(View.VISIBLE);
+        signOutButton.setVisibility(View.VISIBLE);
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(getApplicationContext());
         if(account !=  null){
             String personName = account.getDisplayName();

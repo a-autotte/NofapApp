@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     >
+    <include layout="@layout/layout_fragment_container"/>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"

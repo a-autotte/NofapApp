@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "44195610321",
-    "project_id": "nofapapp-604aa",
-    "storage_bucket": "nofapapp-604aa.appspot.com"
+    "project_number": "1083237439419",
+    "project_id": "nofapapp-b2859",
+    "storage_bucket": "nofapapp-b2859.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:44195610321:android:41bbf6f63194d722980ff0",
+        "mobilesdk_app_id": "1:1083237439419:android:7a77e1d85e4d7dcfdb569e",
         "android_client_info": {
           "package_name": "com.example.nofapmainactivity"
         }
       },
       "oauth_client": [
         {
-          "client_id": "44195610321-i9696cs0q0rfavkq91765podqqltbhl0.apps.googleusercontent.com",
+          "client_id": "1083237439419-c76pa1kno2p6ubb8vfkt5p1t3281grrd.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCl1QGDFgBhUreb_TV7qrmi2FgiClZkHyA"
+          "current_key": "AIzaSyCnNDZQ_II_vdWU2sI-MP3v1vuBdFBMVEk"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "44195610321-i9696cs0q0rfavkq91765podqqltbhl0.apps.googleusercontent.com",
+              "client_id": "1083237439419-c76pa1kno2p6ubb8vfkt5p1t3281grrd.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

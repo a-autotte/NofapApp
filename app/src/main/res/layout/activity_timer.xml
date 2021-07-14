@@ -10,6 +10,8 @@
     android:background="@drawable/main_background"
     tools:context=".Timer.TimerActivity">
 
+    <include layout="@layout/layout_fragment_container"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

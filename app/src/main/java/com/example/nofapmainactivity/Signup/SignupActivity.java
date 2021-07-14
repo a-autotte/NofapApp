@@ -1,7 +1,6 @@
 package com.example.nofapmainactivity.Signup;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.app.Activity;
@@ -19,7 +18,8 @@ import com.example.nofapmainactivity.Profile.ProfileActivity;
 import com.example.nofapmainactivity.R;
 import com.example.nofapmainactivity.databinding.ActivitySignupBinding;
 
-import com.example.nofapmainactivity.Modals.UserModal;
+import com.example.nofapmainactivity.Utility.Modals.UserModal;
+import com.facebook.internal.Utility;
 
 import java.util.Locale;
 
@@ -48,7 +48,7 @@ public class SignupActivity extends AppDefaultActivity {
         binding.signupButtonId.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                UserModal userModal = new UserModal();
+                userModal = new UserModal();
                 userModal.userName = binding.userEditId.getText().toString();
                 userModal.userEmail = binding.emailEditId.getText().toString();
                 userModal.userPassword = binding.passwordEditId.getText().toString();

@@ -14,7 +14,7 @@ import android.view.MenuItem;
 
 import com.example.nofapmainactivity.AppDefaultActivity;
 import com.example.nofapmainactivity.Community.CommunityActivity;
-import com.example.nofapmainactivity.Modals.ToDoModel;
+import com.example.nofapmainactivity.Utility.Modals.ToDoModel;
 import com.example.nofapmainactivity.Profile.ProfileActivity;
 import com.example.nofapmainactivity.R;
 import com.example.nofapmainactivity.Settings.SettingsActivity;

@@ -81,7 +81,7 @@ public class TrophyActivity extends AppDefaultActivity {
     @NonNull
     @Override
     protected Fragment createInitialFragment() {
-        return null;
+        return TrophyFragment.newInstance();
     }
 
     @Override

@@ -8,8 +8,9 @@
     android:orientation="vertical"
     android:id="@+id/dl"
     android:background="@drawable/main_background"
-    tools:context=".Settings.SettingsActivity"
-    >
+    tools:context=".Settings.SettingsActivity">
+
+     <include layout="@layout/layout_fragment_container"/>
 
      <LinearLayout
          android:layout_width="match_parent"

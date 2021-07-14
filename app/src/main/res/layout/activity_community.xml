@@ -8,6 +8,8 @@
     android:id="@+id/dl"
     tools:context=".Community.CommunityActivity">
 
+    <include layout="@layout/layout_fragment_container"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:background="@drawable/main_background"
         android:layout_width="0dp"

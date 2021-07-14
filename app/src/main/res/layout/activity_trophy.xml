@@ -8,7 +8,7 @@
     android:background="@drawable/main_background"
     android:orientation="vertical"
     tools:context=".Trophy.TrophyActivity">
-
+    <include layout="@layout/layout_fragment_container"/>
         <GridLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
